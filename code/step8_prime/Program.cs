@@ -1,21 +1,21 @@
 ﻿Console.Write("Введите число: ");
-int number = Convert.ToInt32(Console.ReadLine());
+int n = Convert.ToInt32(Console.ReadLine());
 
-if (IsPrime(number))
+if (IsPrime(n))
 {
-    Console.WriteLine($"{number} - простое число");
+    Console.WriteLine($"{n} - простое число");
 }
 else
 {
-    Console.WriteLine($"{number} - не простое число");
+    Console.WriteLine($"{n} - не простое число");
 }
 
-bool IsPrime(int n)
+bool IsPrime(int num)
 {
-    if (n < 2) return false;
-    for (int i = 2; i <= n / 2; i++)
+    if (num < 2) return false;
+    for (int i = 2; i * i <= num; i++)
     {
-        if (n % i == 0) return false;
+        if (num % i == 0) return false;
     }
     return true;
 }
